@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigg Boss</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100vw;
+        height: 100vh;
+        background: #000;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+      }
+
+      #playerContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+      }
+
+      .error-message {
+        display: none;
+        color: #fff;
+        text-align: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 8px;
+        z-index: 2;
+      }
+
+      .jw-wrapper {
+        position: fixed !important;
+        width: 100vw !important;
+        height: 100vh !important;
+      }
+    </style>
+    <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+  </head>
+  <body>
+    <div id="playerContainer"></div>
+    <div class="error-message"></div>
+    <script>
+      (() => {
+        const showError = (message) => {
+          const errorEl = document.querySelector('.error-message');
+          document.getElementById('playerContainer').style.display = 'none';
+          errorEl.style.display = 'block';
+          errorEl.innerHTML = `
+					<h1>Error</h1>
+					<p>${message}</p>`;
+        };
+        const enterFullscreen = (element) => {
+          if (element.requestFullscreen) {
+            element.requestFullscreen();
+          } else if (element.webkitRequestFullscreen) {
+            element.webkitRequestFullscreen();
+          } else if (element.msRequestFullscreen) {
+            element.msRequestFullscreen();
+          }
+        };
+        const init = async () => {
+          try {
+            const channelName = new URLSearchParams(location.search).get('c');
+            const response = await fetch('./api.json');
+            const channels = await response.json();
+            const channel = channels.find(ch => ch.name === channelName);
+            const player = jwplayer('playerContainer').setup({
+              file: channel.url,
+              autostart: true,
+              stretching: "exactfit",
+              width: "100%",
+              height: "100%",
+              type: "hls",
+              primary: "html5",
+              displaytitle: false,
+              displaydescription: false,
+              controls: true,
+              fullscreen: true,
+              aspectratio: "16:9",
+              stretching: "uniform"
+            });
+            player.on('error', () => showError('An error occurred'));
+            player.on('ready', () => {
+              document.querySelector('.error-message').style.display = 'none';
+              enterFullscreen(document.documentElement);
+            });
+            player.on('fullscreen', (event) => {
+              if (!event.fullscreen) {
+                enterFullscreen(document.documentElement);
+              }
+            });
+            // Handle resize events
+            window.addEventListener('resize', () => {
+              player.resize(window.innerWidth, window.innerHeight);
+            });
+            // Prevent exiting fullscreen
+            document.addEventListener('fullscreenchange', () => {
+              if (!document.fullscreenElement) {
+                enterFullscreen(document.documentElement);
+              }
+            });
+          } catch (error) {
+            showError('An error occurred');
+          }
+        };
+        document.addEventListener('DOMContentLoaded', init);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+[{
+  "name": "Bigg Boss Hindi",
+  "logo": "https://v3img.voot.com/v3Storage/assets/16x9-1728316195515.jpg",
+  "url": "https://prod-ent-live-cf.jiocinema.com/hls/live/2101885/uhd_akamai_atv_avc_24x7_bbhindi_s18_day03/master.m3u8",
+  "category": "Entertainment"
+}, {
+  "name": "Colors Tamil HD",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/ct-1644165913136.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/429.m3u8",
+  "category": "Entertainment"
+}, {
+  "name": "News18 Tamil Nadu",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/tamilnadu-16x9-1693634364129.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Tamil_Nadu_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "Colors HD",
+  "logo": "https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/colors-hindi--16x9-1714557869344.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/144.m3u8",
+  "category": "Entertainment"
+}, {
+  "name": "Rishtey",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/collors-rishtey-live-channels-16x9-3-1642676080416-1674198105431-1697532377978.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/1370.m3u8",
+  "category": "Entertainment"
+}, {
+  "name": "Colors Bengla HD",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-bangla-new-16x9-4-1649659533344.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/756.m3u8",
+  "category": "Entertainment"
+}, {
+  "name": "Colors Kannada HD",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-kannada-16x9-1677754085834.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/757.m3u8",
+  "category": "Entertainment"
+}, {
+  "name": "Colors Marathi HD",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-marathi-live-channels-16x9-4-6-apr-1649257093359.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/755.m3u8",
+  "category": "Entertainment"
+}, {
+  "name": "Colors Gujarati",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-gujarati-16x9-1713269620328.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/196.m3u8",
+  "category": "Entertainment"
+}, {
+  "name": "Colors Oriya",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-odia-live-channels-16x9-4-1642583679866.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/198.m3u8",
+  "category": "Entertainment"
+}, {
+  "name": "Comedy Central HD",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/comedy-central-16x9-1624419769894-1663699927285.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/1157.m3u8",
+  "category": "English Entertainment"
+}, {
+  "name": "Colors Infinity HD",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-infinity-live-channels-16x9-1642496946057.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/1158.m3u8",
+  "category": "English Entertainment"
+}, {
+  "name": "Colors Super",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-super-live-channels-16x9-4-1642744939924.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/785.m3u8",
+  "category": "Entertainment"
+}, {
+  "name": "Colors Cineplex HD",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/Live-Tv-Channels-colors-cineplex-1607514413063.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/1477.m3u8",
+  "category": "Movies"
+}, {
+  "name": "Colors Cineplex Superhit",
+  "logo": "https://v3img.voot.com/resizeMedium,w_960,h_540/v3Storage/assets/colors-cineplex-superhit%2016x9-1648793655358.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/1450.m3u8",
+  "category": "Movies"
+}, {
+  "name": "Colors Cineplex Bollywood",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/cineplex-1713963820848.jpeg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/1763.m3u8",
+  "category": "Movies"
+}, {
+  "name": "Colors Kannada Cinema",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/colors-kannada-cinema-16x9-1713963481807.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/1632.m3u8",
+  "category": "Regional Movies"
+}, {
+  "name": "MTV HD",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/mtv-16x9-1714316345624.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/1145.m3u8",
+  "category": "Music"
+}, {
+  "name": "MTV Beats HD",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/mtv-beats-live-channels-16x9-1642675874665.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/753.m3u8",
+  "category": "Music"
+}, {
+  "name": "Nick SD",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/16x9-1719554242246.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/1227.m3u8",
+  "category": "Kids"
+}, {
+  "name": "Nick Junior",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/nick-jr-16x9-2-1626708077243.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/544.m3u8",
+  "category": "Kids"
+}, {
+  "name": "Nick HD+",
+  "logo": "https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/nick-hd-plus-live-channels-16x9-4-1642585145139.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/1226.m3u8",
+  "category": "Kids"
+}, {
+  "name": "Sonic",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/sonic-16x9-2-1626707025539.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/815.m3u8",
+  "category": "Kids"
+}, {
+  "name": "SPORTS 18 HD",
+  "logo": "https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/sports18_tray-1693930594270.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/122.m3u8",
+  "category": "Sports"
+}, {
+  "name": "SPORTS 18 Khel",
+  "logo": "https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/sports18_khel_tray-1693931658589.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/1998.m3u8",
+  "category": "Sports"
+}, {
+  "name": "JC Sports 24x7",
+  "logo": "https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/jc_sports_horizontal_tray-1695561700528.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/2000.m3u8",
+  "category": "Sports"
+}, {
+  "name": "CricStream",
+  "logo": "https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/sports_zone_cricket_horizontal-1695032322122.jpg",
+  "url": "https://cors.8088yyy.workers.dev/?u=https://live.drmlive-02.workers.dev/jc/2001.m3u8",
+  "category": "Sports"
+}, {
+  "name": "CNN News18",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/cnn-generic-1735144005413.jpeg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/CNN_News18_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Madhya Pradesh Chhattisgarh",
+  "logo": "https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/1055-1693632366823.jpeg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_MP_Chhattisgarh_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Lokmat",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/16x9-white-1726916029071.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Lokmat_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 India",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/16x9-1733396651334.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_India_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Punjab Haryana Himachal",
+  "logo": "https://v3img.voot.com/resizeLow,w_160,h_90/v3Storage/assets/16x9-1733396651334.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Punjab_Haryana_HP_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Rajasthan",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/rajastan-1693628286073.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Rajasthan_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Uttar Pradesh Uttarakhand",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/up-uk-1693628388896.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_UP_Uttarakhand_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Bihar Jharkhand",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/bihar-1693628454804.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Bihar_Jharkhand_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Bangla",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/news18bengalli-1715774931287.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Bangla_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Odia",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/udisa-1693628344605.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Odia_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Gujarati",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/gujarati-1693627956573.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Gujarati_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Urdu",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/16x9-1724419340679.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Urdu_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Assam Northeast",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/asarm-north-east-1693627849598.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Assam_North_East_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Kannada",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/anchors_thumbnail_jiocinema-1701937989893.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Kannada_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Kerala",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/08-1680693299786.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Kerala_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "CNBC TV18",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/cnbc18-shereen-bhan-16x9-2-1693479472079.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/CNBC_TV18_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "CNBC Awaaz",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/cnbc-awaaz-16x9-1702387934761.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/CNBC_Awaaz_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "CNBC Bajar",
+  "logo": "https://v3img.voot.com/resizeMedium,w_384,h_216/v3Storage/assets/whatsapp16x9-1693491956187.jpg",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/CNBC_Bazaar_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}
+]

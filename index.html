@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>8088y TV</title>
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --bg-medium: #1E1E1E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B0B0;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: var(--text-primary);
+            font-size: 2.2rem;
+            font-weight: 5500;
+        }
+
+        .telegram-btn {
+            background-color: #0088cc;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color var(--transition-speed);
+        }
+
+        .telegram-btn:hover {
+            background-color: #006699;
+        }
+
+        .file-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .directory-item {
+            background-color: var(--bg-medium);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            
+        }
+
+        .directory-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .directory-item img {
+            max-width: 150px;
+            max-height: 150px;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+
+        .directory-item a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .file-container {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+
+            .directory-item img {
+                max-width: 100px;
+                max-height: 100px;
+            }
+
+            .directory-item a {
+                font-size: 0.9rem;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>8088yy TV</h1>
+            <a href="#" class="telegram-btn">Join Telegram</a>
+        </div>
+        <div class="file-container">
+            <div class='directory-item'><a href='Fancode\index.html'><img src='https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/FanCode_logo.svg/1200px-FanCode_logo.svg.png' alt='Fancode'></a><a href='Fancode\index.html'><b>Fancode Live Matches</b></a></div>
+            <div class='directory-item'><a href='Sonyliv-Live-Matches\index.html'><img src='https://cdn.freelogovectors.net/wp-content/uploads/2021/12/sonyliv-logo-freelogovectors.net_.png' alt='Sonyliv'></a><a href='Sonyliv-Live-Matches\index.html'><b>Sonyliv Live Matches</b></a></div>
+            <div class='directory-item'><a href='Yupptv\index.html'><img src='https://m.media-amazon.com/images/I/41mcw3k6f5L.png' alt='Yupptv'></a><a href='Yupptv\index.html'><b>Yupptv</b></a></div>
+            <div class='directory-item'><a href='Jio-Cinema/'><img src='https://i.ibb.co/yYCtY9V/jc-logo-stack-1682163295957.jpg' alt='Jio-Cinema'></a><a href='Jio-Cinema/'><b>Jio Cinema</b></a></div>
+            <div class='directory-item'><a href='Astro\index.html'><img src='https://cdn.prod.website-files.com/60a75d8226f3295ecacf9e33/6143748c117705cedffc4ee7_6124a051ce5fb8ee1d58427c_AG%2520logo.png' alt='Astro'></a><a href='Astro\index.html'><b>Astro</b></a></div>
+            <div class='directory-item'><a href='News\index.html'><img src='https://i.pinimg.com/originals/1e/c4/25/1ec4251d4696fd67feac822997ec76c5.jpg' alt='News'></a><a href='News\index.html'><b>News</b></a></div>
+            <div class='directory-item'><a href='Kids\index.html'><img src='https://i.ibb.co/HDqKQDm/pngegg.png' alt='Kids'></a><a href='Kids\index.html'><b>Kids</b></a></div>
+            <div class='directory-item'><a href='Tamil-local-Channel\index.html'><img src='https://yt3.googleusercontent.com/DldQI2BEb286Easm597eUcvye23Poz9ZweD1bxxmnVIyUOWnIrnw62x-cB-agxxPAj70l046Fw=s900' alt='Tamil local Channel'></a><a href='Tamil-local-Channel\index.html'><b>Tamil local Channel</b></a></div>
+            <div class='directory-item'><a href='Bigg-Boss\index.html'><img src='https://upload.wikimedia.org/wikipedia/en/3/3a/Bigg_Boss_Tamil_2.jpg' alt='Bigg Boss'></a><a href='Bigg-Boss\index.html'><b>Bigg Boss</b></a></div>
+            <div class='directory-item'><a href='https://8088yyymusic.vercel.app/#tamil'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/2048px-Apple_Music_icon.svg.png' alt='Music Player'></a><a href='https://8088yyymusic.vercel.app/#tamil'><b>Music Player</b></a></div>
+
+        </div>
+    </div>
+</body>
+</html>

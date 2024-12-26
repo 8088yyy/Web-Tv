@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Astro Vaanavil",
+    "category": "Entertainment",
+    "logo": "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/397_144.png"
+  },
+  {
+    "name": "Astro Vinmeen",
+    "category": "Entertainment",
+    "logo": "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/167_144.png"
+  },
+  {
+    "name": "Astro Vellithirai",
+    "category": "Entertainment",
+    "logo": "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/399_144.png"
+  },
+  {
+    "name": "Sun TV",
+    "category": "Entertainment",
+    "logo": "https://linear-poster.astro.com.my/prod/logo/Sun_TV_v1.png"
+  },
+  {
+    "name": "Sun Music",
+    "category": "Music",
+    "logo": "https://linear-poster.astro.com.my/prod/logo/Sun_Music_v1.png"
+  },
+  {
+    "name": "Adithya",
+    "category": "Entertainment",
+    "logo": "https://linear-poster.astro.com.my/prod/logo/Adithiya_v1.png"
+  },
+  {
+    "name": "Star Vijay",
+    "category": "Entertainment",
+    "logo": "https://linear-poster.astro.com.my/prod/logo/Star_Vijay_v1.png"
+  },
+  {
+    "name": "Colors Tamil",
+    "category": "Entertainment",
+    "logo": "https://linear-poster.astro.com.my/prod/logo/Colors-Tamil_v1.png"
+  },
+  {
+    "name": "Zee Tamil",
+    "category": "Entertainment",
+    "logo": "https://linear-poster.astro.com.my/prod/logo/ZeeTamil_v1.png",
+    "url": "https://linearjitp02-playback.astro.com.my/dash-wv/linear/2311/default_primary.mpd"
+  },
+  {
+    "name": "Astro Thangathirai",
+    "category": "Entertainment",
+    "logo": "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/177_144.png"
+  },
+  {
+    "name": "Sun News",
+    "category": "News",
+    "logo": "https://linear-poster.astro.com.my/prod/logo/Sun-News.png",
+    "url": "https://linearjitp-playback.astro.com.my/dash-wv/linear/5087/default_primary.mpd"
+  },
+  {
+    "name": "Sun Life",
+    "category": "Entertainment",
+    "logo": "https://linear-poster.astro.com.my/prod/logo/Sun-Life.png",
+    "url": "https://linearjitp02-playback.astro.com.my/dash-wv/linear/5089/default_primary.mpd"
+  },
+  {
+    "name": "Astro Cricket",
+    "category": "Sports",
+    "logo": "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/197_144.png"
+  }
+]

@@ -1,0 +1,15 @@
+[
+{
+  "name": "Hungama",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/3/35/Hungama_TV.png",
+  "url": "https://play.yuvraj49.xyz/hungama/index.m3u8"
+}, {
+  "name": "Animax",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/Animax.png",
+  "url": "https://cdn09jtedge.indihometv.com/joss/130/animax/index.m3u8"
+}, {
+  "name": "Cartoon Network English",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fe/CARTOON_NETWORK_logo.png",
+  "url": "https://cdn09jtedge.indihometv.com/joss/194/cartoonnetwork/index.m3u8"
+}
+]

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Astr0</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/controls.min.css" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.ui.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div data-shaka-player-container style="position:absolute;z-index: -1;top: 0;left: 0;width: 100%; height: 100%;object-fit: cover;">
+        <video autoplay muted data-shaka-player id="video" style="width:100%;height:100%;"></video>
+    </div>
+    <script>
+        const manifestUri = "https://linearjitp-playback.astro.com.my/dash-wv/linear/5087/default_primary.mpd";
+        
+        async function init() {
+            const video = document.getElementById('video');
+            const ui = video['ui'];
+            const controls = ui.getControls();
+            const player = controls.getPlayer();
+            window.player = player;
+            window.ui = ui;
+
+            const config = {
+                controlPanelElements: [
+                    'rewind',
+                    'play_pause',
+                    'fast_forward',
+                    'mute',
+                    'volume',
+                    'time_and_duration',
+                    'spacer',
+                    'quality',
+                    'captions',
+                    'language',
+                    'picture_in_picture',
+                    'fullscreen'
+                ],
+                addSeekBar: true
+            };
+            ui.configure(config);
+            
+            player.configure({
+                drm: {
+                    "clearKeys": {
+                        "0a171cc1bb90f78820cf25cc55f0ee10": "ac08792047218ca2a01f2bbd12d90501"
+                    },
+                },
+                abr: {
+                    defaultBandwidthEstimate: 16888,
+                    enabled: true,
+                    restrictions: {
+                        minHeight: 359,
+                        maxHeight: 720
+                    }
+                }
+            });
+            
+            player.addEventListener('error', onPlayerErrorEvent);
+            controls.addEventListener('error', onUIErrorEvent);
+            
+            try {
+                await player.load(manifestUri);
+                console.log('The video has now been loaded!');
+            } catch (error) {
+                onPlayerError(error);
+            }
+        }
+        
+        function onPlayerErrorEvent(errorEvent) {
+            onPlayerError(errorEvent.detail);
+        }
+        
+        function onPlayerError(error) {
+            console.error('Error code', error.code, 'object', error);
+        }
+        
+        function onUIErrorEvent(errorEvent) {
+            onPlayerError(errorEvent.detail);
+        }
+        
+        function initFailed(errorEvent) {
+            console.error('Unable to load the UI library!');
+        }
+        
+        document.addEventListener('shaka-ui-loaded', init);
+        document.addEventListener('shaka-ui-load-failed', initFailed);
+    </script>
+</body>
+</html>

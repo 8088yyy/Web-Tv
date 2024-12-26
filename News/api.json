@@ -1,0 +1,449 @@
+[{
+  "name": "News18 Tamil Nadu",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/News_18_Tamilnadu.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Tamil_Nadu_NW18_MOB/output01/index.m3u8",
+  "category": "Tamil"
+}, {
+  "name": "Zee Tamil News",
+  "logo": "https://yt3.googleusercontent.com/uEg0EEuKqJHhrkjmSn4VaXrpAe_WO47laeBqZ45HrlYwKN-wm3-Cijq_taNvnH-MlEXylFBpCg=s900",
+  "url": "https://dpkvdnzbeen1l.cloudfront.net/index_4.m3u8",
+  "category": "Tamil"
+}, {
+  "name": "Asianet News Tamil",
+  "category": "Tamil",
+  "logo": "https://static.asianetnews.com/v1/images/tamil_logo.png",
+  "url": "https://vidcdn.vidgyor.com/ptm-origin/aslive/playlist.m3u8"
+}, {
+  "name": "Puthiya Thalaimurai",
+  "category": "Tamil",
+  "logo": "https://d229kpbsb5jevy.cloudfront.net/tv/150/150/bnw/puthiyathalaimurai-black.png",
+  "url": "https://segment.yuppcdn.net/240122/puthiya/playlist.m3u8"
+}, {
+  "name": "Polimer News",
+  "category": "Tamil",
+  "logo": "https://d229kpbsb5jevy.cloudfront.net/tv/150/150/bnw/polimer-news-black.png",
+  "url": "https://segment.yuppcdn.net/110322/polimernews/playlist.m3u8"
+}, {
+  "name": "News7 Tamil",
+  "category": "Tamil",
+  "logo": "https://d229kpbsb5jevy.cloudfront.net/tv/150/150/bnw/news7tamil-black.png",
+  "url": "https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/news7_nim_https/240122/news7/playlist.m3u8"
+}, {
+  "name": "Thanthi TV",
+  "category": "Tamil",
+  "logo": "https://d229kpbsb5jevy.cloudfront.net/tv/150/150/bnw/thanthi-tv-black.png",
+  "url": "https://segment.yuppcdn.net/110322/thanthi/playlist.m3u8"
+}, 
+{
+  "name": "M Nadu TV",
+  "category": "Tamil",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/M_Nadu.png",
+  "url": "https://player.mslivestream.net/mslive/48be4c2542b56ac026c0e25dfe5b2f25.sdp/playlist.m3u8"
+}, {
+  "name": "Samugam TV",
+  "category": "Tamil",
+  "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEJTajGtP3tTQfqBt03HoTdkJNI2toIaypzw&s",
+  "url": "https://ca.streamjo.com/live/samugam.m3u8"
+},
+{
+  "name": "CNN News18",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/CNN_NEWS_18.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/CNN_News18_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Madhya Pradesh Chhattisgarh",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ETV_MP.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_MP_Chhattisgarh_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Lokmat",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/IBN_Lokmat.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Lokmat_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 India",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/IBN_7.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_India_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Punjab Haryana Himachal",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ETV_Haryana_and_HP_News.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Punjab_Haryana_HP_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Rajasthan",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ETV_RAJASTHAN.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Rajasthan_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Uttar Pradesh Uttarakhand",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ETV_UP.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_UP_Uttarakhand_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Bihar Jharkhand",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ETV_BIHAR.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Bihar_Jharkhand_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Bangla",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ETV_Bangla_News.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Bangla_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Odia",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ETV_News_Oriya.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Odia_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Gujarati",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ETV_News_Gujarati.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Gujarati_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Urdu",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ETV_Urdu.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Urdu_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Assam Northeast",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/News_18_Assam.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Assam_North_East_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Kannada",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ETV_Kannada_News.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Kannada_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "News18 Kerala",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/News_18_Kerala.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/News18_Kerala_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "CNBC TV18",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/CNBC_Tv_18.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/CNBC_TV18_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "CNBC Awaaz",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/CNBC_Awaaz.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/CNBC_Awaaz_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "CNBC Bajar",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/CNBC_Bazaar_MNO.png",
+  "url": "https://nw18live.cdn.jio.com/bpk-tv/CNBC_Bazaar_NW18_MOB/output01/index.m3u8",
+  "category": "News"
+}, {
+  "name": "Zee News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Zee_News.png",
+  "url": "https://dknttpxmr0dwf.cloudfront.net/index_2.m3u8",
+  "category": "News"
+}, {
+  "name": "Zee 24 Kalak",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Zee_24_Kalak.png",
+  "url": "https://d2i4me5ac6ausm.cloudfront.net/index_5.m3u8",
+  "category": "News"
+}, {
+  "name": "Zee Delhi NCR Haryana",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Zee_Kalinga.png",
+  "url": "https://d2s40ae9uabrl.cloudfront.net/index_4.m3u8",
+  "category": "News"
+}, {
+  "name": "Zee 24 Taas",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Zee_24_Taas.png",
+  "url": "https://dgrvlduwztkd4.cloudfront.net/index_5.m3u8",
+  "category": "News"
+}, {
+  "name": "Zee Bharat",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Zee_SANGAM.png",
+  "url": "https://d1hp2yai3k4ork.cloudfront.net/index_4.m3u8",
+  "category": "News"
+}, {
+  "name": "24 Ghanta TV",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/24_Ghanta_TV.png",
+  "url": "https://d2dsoyvkr33m05.cloudfront.net/index_5.m3u8",
+  "category": "News"
+}, {
+  "name": "Zee News MP Chattisgarh",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Zee_News_MP_Chattisgarh.png",
+  "url": "https://duw35ict5q7th.cloudfront.net/index_3.m3u8",
+  "category": "News"
+}, {
+  "name": "Zee Salaam",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Zee_Salaam.png",
+  "url": "https://d2o3r1shda7xvv.cloudfront.net/index_5.m3u8",
+  "category": "News"
+}, {
+  "name": "Zee Punjabi HP Haryana",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Zee_Punjabi_HP_Haryana.png",
+  "url": "https://d31s6sxcz6vnac.cloudfront.net/index_3.m3u8",
+  "category": "News"
+}, {
+  "name": "Zee Bihar Jharkhand",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Zee_Purvaiya.png",
+  "url": "https://d3vmwjy7v49lo5.cloudfront.net/index_4.m3u8",
+  "category": "News"
+}, {
+  "name": "Zee Rajasthan",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Zee_Rajasthan.png",
+  "url": "https://d2jso9g61rg1h8.cloudfront.net/index_3.m3u8",
+  "category": "News"
+}, {
+  "name": "Zee Business",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Zee_Business.png",
+  "url": "https://dwby15d04agvq.cloudfront.net/index_5.m3u8",
+  "category": "News"
+}, {
+  "name": "WION",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/Wion.png",
+  "url": "https://d7x8z4yuq42qn.cloudfront.net/index_7.m3u8",
+  "category": "News"
+}, {
+  "name": "Aaj Tak",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Aaj_Tak.png",
+  "category": "News",
+  "url": "https://feeds.intoday.in/aajtak/api/master.m3u8"
+}, {
+  "name": "Aaj Tak HD",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Aaj_Tak.png",
+  "category": "News",
+  "url": "https://feeds.intoday.in/aajtak/api/aajtakhd/master.m3u8"
+}, {
+  "name": "Good News Today",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Tez.png",
+  "category": "News",
+  "url": "https://feeds.intoday.in/gnt/api/master.m3u8"
+}, {
+  "name": "India Today",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/India_Today.png",
+  "category": "News",
+  "url": "https://feeds.intoday.in/hltapps/api/master.m3u8"
+}, {
+  "name": "Times Now",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/Times_NOW.png",
+  "category": "News",
+  "url": "https://dztlhgid9me95.cloudfront.net/live-tv/Vidgyor/timesnow/timesnow_master.m3u8"
+}, {
+  "name": "Times Now Navbharat",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/Times_Now_Navbharat.png",
+  "category": "News",
+  "url": "https://dvvvc0h9v3hoz.cloudfront.net/master.m3u8"
+}, {
+  "name": "ET Now",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ET_Now.png",
+  "category": "News",
+  "url": "https://damso2e2yhynu.cloudfront.net/master.m3u8"
+}, {
+  "name": "ET Now Swadesh",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ET_Now_Swadesh.png",
+  "category": "News",
+  "url": "https://d32gxr3r1ksq2p.cloudfront.net/master.m3u8"
+}, {
+  "name": "Mirrow Now",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/Mirror_Now.png",
+  "category": "News",
+  "url": "https://d179muqh6u5263.cloudfront.net/master.m3u8"
+}, {
+  "name": "NewsX",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/News_X.png",
+  "category": "News",
+  "url": "https://indianews.ottlive.co.in/newsx/newsx/index.fmp4.m3u8"
+}, {
+  "name": "India News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/India_news.png",
+  "category": "News",
+  "url": "https://indianews.ottlive.co.in/indianewsnational/indianewsnational/index.m3u8"
+}, {
+  "name": "NDTV Profit Prime",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/NDTV_Profit.png",
+  "category": "News",
+  "url": "https://dai.google.com/linear/hls/event/QuU6z3GSTDaXuLL9Hs5A5Q/master.m3u8"
+}, {
+  "name": "NDTV 24x7",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/NDTV_24x7.png",
+  "category": "News",
+  "url": "https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678-b/ndtv24x7/masterb_1080p@4.m3u8"
+}, {
+  "name": "NDTV INDIA",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/NDTV_India.png",
+  "category": "News",
+  "url": "https://ndtvindiaelemarchana.akamaized.net/hls/live/2003679-b/ndtvindia/master.m3u8"
+}, {
+  "name": "NDTV Marathi",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/NDTV_Marathi.png",
+  "category": "News",
+  "url": "https://web-ndtv-marathi.akamaized.net/hls/live/2110470/ndtvmarathi/master_1.m3u8"
+}, {
+  "name": "NDTV MP Chhattisgarh",
+  "logo": "https://yt3.googleusercontent.com/qATXIkOUNcKSPZ4GYYpyDR1AaKmBjLKT2ITlIYtCNGThB9FLs-LuGwsnztgQzJarcNgG0Kgdg3k=s900",
+  "category": "News",
+  "url": "https://ndtvregional.akamaized.net/hls/live/2102726-b/ndtvmpcg/master_1.m3u8"
+}, {
+  "name": "NDTV Rajasthan",
+  "logo": "https://yt3.googleusercontent.com/T5ltIUteczA2n9OJfjCEAYU1PZ_Mqbr3BkUrcgj7IvvkU5w8w3-wieb_KPCk--ZRNfNmesqXGg=s900",
+  "category": "News",
+  "url": "https://ndtvregional.akamaized.net/hls/live/2102726-b/ndtvraj/master_1.m3u8"
+}, {
+  "name": "Republic TV",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/Republic_TV.png",
+  "category": "News",
+  "url": "https://vg-republictvlive.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-366023/main.m3u8"
+}, {
+  "name": "Republic Bharat",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/Republic_Bharat.png",
+  "category": "News",
+  "url": "https://vg-republictvlive.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-275673/main.m3u8"
+}, {
+  "name": "R Kannada",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/R.Kannada.png",
+  "category": "News",
+  "url": "https://vg-republictvlive.akamaized.net/ptnr-republicweb/title-Republic_TV_Kannada/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/1acd1ce1-c6a7-4ae4-afa1-133ffb111ebb/main.m3u8"
+}, {
+  "name": "R Bangla",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/R_Bangla.png",
+  "category": "News",
+  "url": "https://vg-republictvlive.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-456368/main.m3u8"
+}, {
+  "name": "News9",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/News9.png",
+  "category": "News",
+  "url": "https://vg-tv9live.akamaized.net/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-573213/7be05e4c-62d9-4992-940a-87d073766b45/3.m3u8"
+}, {
+  "name": "TV9 Bharatvarsh",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/TV9_Bharatvarsh.png",
+  "category": "News",
+  "url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9hinjzgtpe/liveabr/playlist.m3u8"
+}, {
+  "name": "TV9 Kannada",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/TV9_Karnataka.png",
+  "category": "News",
+  "url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9kanmo6oiq/liveabr/playlist.m3u8"
+}, {
+  "name": "TV9 Telugu",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/TV9_Telugu_News.png",
+  "category": "News",
+  "url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9telcmjhcs/liveabr/playlist.m3u8"
+}, {
+  "name": "TV9 Maharashtra",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/TV9_Maharashtra.png",
+  "category": "News",
+  "url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9marlygv8h/liveabr/playlist.m3u8"
+}, {
+  "name": "TV9 Bangla",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/TV9_Bangla.png",
+  "category": "News",
+  "url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9banaen8yq/liveabr/playlist.m3u8"
+}, {
+  "name": "TV9 Gujarati",
+  "logo": "https://yt3.googleusercontent.com/eBnShBNlZKmhLa5e-aWoFd9uNa2c4w3awL5A5cuS2lNfHfgpRfldTW-UoX-qtJKJgzziUiVNltI=s900",
+  "category": "News",
+  "url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9guj3ki8lu/liveabr/playlist.m3u8"
+}, {
+  "name": "ABP News India",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/ABP_News_India.png",
+  "category": "News",
+  "url": "https://abplivetv.pc.cdn.bitgravity.com/httppush/abp_livetv/abp_abpnews/master.m3u8"
+}, {
+  "name": "ABP Asmita",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ABP_Asmita.png",
+  "category": "News",
+  "url": "https://abplivetv.pc.cdn.bitgravity.com/httppush/abp_livetv/abp_asmita/master.m3u8"
+}, {
+  "name": "ABP Ananda",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ABP_Ananda.png",
+  "category": "News",
+  "url": "https://abplivetv.pc.cdn.bitgravity.com/httppush/abp_livetv/abp_ananda/master.m3u8"
+}, {
+  "name": "ABP Majha",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ABP_Majha.png",
+  "category": "News",
+  "url": "https://abplivetv.pc.cdn.bitgravity.com/httppush/abp_livetv/abp_majha/master.m3u8"
+}, {
+  "name": "Asianet News",
+  "category": "News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/Asianet_News.png",
+  "url": "https://vidcdn.vidgyor.com/asianet-origin/liveabr/playlist.m3u8"
+}, {
+  "name": "Asianet Suvarna News",
+  "category": "News",
+  "logo": "https://static.asianetnews.com/v1/images/asianet_suvarna_news.png",
+  "url": "https://vidcdn.vidgyor.com/suvarna-origin/liveabr/playlist.m3u8"
+}, {
+  "name": "Bloomberg TV",
+  "category": "News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/Bloomberg_TV.png",
+  "url": "https://dai.google.com/linear/hls/pb/event/PwTJe4aZRvSBjbWY7_VSzA/stream/9491c571-5669-497c-9a86-0f625fd50f42:TPE2/master.m3u8"
+}, {
+  "name": "Bloomberg Originals",
+  "category": "News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/Bloomberg_Originals.png",
+  "url": "https://dai.google.com/linear/hls/pb/event/cFDvmqo4TGW7EfHwscU_Ew/stream/9661a97a-bc2b-40a6-8f9b-eb26de9d9556:SIN2/master.m3u8"
+}, {
+  "name": "Bharat24",
+  "category": "News",
+  "logo": "https://bharat24live.com/_next/image?url=%2Flogo.png&w=640&q=75",
+  "url": "https://legitpro.co.in/bharat24live/bharat24live/index.m3u8"
+}, {
+  "name": "Bharat Express",
+  "category": "News",
+  "logo": "https://bharatexpress.com/wp-content/themes/newstrackcms/images/bharat-express-new-logo.png",
+  "url": "https://stream1.livebox.co.in/VCAREhls/live.m3u8"
+}, {
+  "name": "Bharat Samachar",
+  "category": "News",
+  "logo": "https://yt3.googleusercontent.com/ytc/AIdro_kSge-JxXVuy2lhz_rbDk4_rZeeO4vCQz7S56T3JYJOPIw=s900",
+  "url": "https://idvd.multitvsolution.com/idvo/bharatsamachar.m3u8"
+}, {
+  "name": "Goa365",
+  "category": "News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/Goa365.png",
+  "url": "https://ktismaservers.in:3086/live/goa365live.m3u8"
+}, {
+  "name": "Public TV",
+  "category": "News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/Public_TV.png",
+  "url": "https://livestream.knowtable.xyz:5443/iostv/streams/Publictv_adaptive.m3u8"
+}, {
+  "name": "ETV Andhra Pradesh",
+  "category": "News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/ETV_Andhra_pradesh.png",
+  "url": "https://d1missilavut3r.cloudfront.net/v1/master/3239369ce9144762f6df79ad0250b16a882d6a39/ETV_AP_H264/index.m3u8"
+}, {
+  "name": "Living India News",
+  "category": "News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/Living_India_News.png",
+  "url": "https://livelegitpro.in/livingindia/livingindia/index.fmp4.m3u8"
+}, {
+  "name": "India Daily Live",
+  "category": "News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/400/-/India_Daily_Live.png",
+  "url": "https://thejbtcdn.vidgyor.com/thejbt-origin/liveabr/playlist.m3u8"
+}, {
+  "name": "DW",
+  "category": "News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/dw.png",
+  "url": "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/stream03/streamPlaylist.m3u8"
+}, {
+  "name": "Channel News Asia International",
+  "category": "News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Channel_News_Asia_International.png",
+  "url": "https://mediacorp-videosbclive.akamaized.net/f4abbc22204c49e2b337203b0ebbf14b/ap-southeast-1/6057994443001/playlist.m3u8"
+}, {
+  "name": "RT TV",
+  "category": "News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/RT_TV.png",
+  "url": "https://rt-glb.rttv.com/dvr/rtnews/playlist.m3u8"
+}, {
+  "name": "NHK World Japan",
+  "category": "News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/NHK_World_Japan.png",
+  "url": "https://cdn.nhkworld.jp/www11/nhkworld-tv/domestic/2003459/live.m3u8"
+}, {
+  "name": "Al Jazeera Live",
+  "category": "News",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/AL_Jazeera.png",
+  "url": "https://live-hls-web-aje-fa.getaj.net/AJE/index.m3u8"
+}
+]
