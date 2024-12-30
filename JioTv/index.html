@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JioTV</title>
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --bg-medium: #1E1E1E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B0B0;
+            --accent-color: #0088cc;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header h1 {
+            color: var(--text-primary);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .category-select,
+        .language-select,
+        .search-input {
+            background-color: var(--bg-medium);
+            color: var(--text-primary);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            outline: none;
+            transition: all var(--transition-speed);
+        }
+
+        .category-select:hover,
+        .language-select:hover,
+        .search-input:hover {
+            background-color: #2a2a2a;
+        }
+
+        .category-select:focus,
+        .language-select:focus,
+        .search-input:focus {
+            box-shadow: 0 0 0 2px var(--accent-color);
+        }
+
+        .category-select,
+        .language-select {
+            width: 150px;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+            padding-right: 35px;
+        }
+
+        .search-input {
+            width: 200px;
+        }
+
+        .telegram-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color var(--transition-speed);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .telegram-btn:hover {
+            background-color: #006699;
+        }
+
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .channel-card {
+            background-color: var(--bg-medium);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .channel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .channel-image-container {
+            position: relative;
+            width: 100%;
+            height: 140px;
+            background-color: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .channel-image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .channel-details {
+            padding: 15px;
+        }
+
+        .channel-details h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .channel-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            display: flex;
+            gap: 8px;
+        }
+
+        .channel-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .no-results {
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 40px;
+            color: var(--text-secondary);
+            background-color: var(--bg-medium);
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .header-controls {
+                flex-direction: column;
+            }
+
+            .category-select,
+            .language-select,
+            .search-input,
+            .telegram-btn {
+                width: 100%;
+            }
+
+            .channels-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .channel-image-container {
+                height: 120px;
+            }
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--bg-medium);
+            border-top: 3px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>JioTv</h1>
+            <p>For the best experience, please disable your ad blocker.</p>
+            <div class="header-controls">
+                <select id="category-dropdown" class="category-select">
+                    <option value="all">All Categories</option>
+                    <option value="business">Business</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="infotainment">Infotainment</option>
+                    <option value="movies">Movies</option>
+                    <option value="sports">Sports</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="kids">Kids</option>
+                    <option value="news">News</option>
+                    <option value="devotional">Devotional</option>
+                    <option value="music">Music</option>
+                    <option value="educational">Educational</option>
+                    <option value="shopping">Shopping</option>
+                </select>
+                <select id="language-dropdown" class="language-select">
+                    <option value="all">All Languages</option>
+                    <option value="tamil">Tamil</option>
+                    <option value="telugu">Telugu</option>
+                    <option value="malayalam">Malayalam</option>
+                    <option value="kannada">Kannada</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="english">English</option>
+                    <option value="assamese">Assamese</option>
+                    <option value="bengali">Bengali</option>
+                    <option value="bhojpuri">Bhojpuri</option>
+                    <option value="french">French</option>
+                    <option value="gujarati">Gujarati</option>
+                    <option value="marathi">Marathi</option>
+                    <option value="nepali">Nepali</option>
+                    <option value="odia">Odia</option>
+                    <option value="punjabi">Punjabi</option>
+                    <option value="urdu">Urdu</option>
+                </select>
+                <input type="text" id="search-input" class="search-input" placeholder="Search channels...">
+                <a href="https://t.me/The8088yyy" class="telegram-btn">
+                    Join Telegram
+                </a>
+            </div>
+        </div>
+        <div id="channels" class="channels-grid">
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <script>
+        const apiUrl = './api.json';
+    
+        const categoryDropdown = document.getElementById('category-dropdown');
+        const languageDropdown = document.getElementById('language-dropdown');
+        const searchInput = document.getElementById('search-input');
+        const channelsContainer = document.getElementById('channels');
+    
+        let allChannels = [];
+        let filteredChannels = [];
+    
+        const fetchChannels = async () => {
+            channelsContainer.innerHTML = '<div class="loading-spinner"></div>';
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                allChannels = data;
+                filteredChannels = data;
+                displayChannels();
+            } catch (error) {
+                channelsContainer.innerHTML = '<div class="no-results">Failed to load channels. Please try again later.</div>';
+            }
+        };
+    
+        const displayChannels = () => {
+            channelsContainer.innerHTML = '';
+            if (filteredChannels.length === 0) {
+                channelsContainer.innerHTML = '<div class="no-results">No channels found.</div>';
+                return;
+            }
+    
+            filteredChannels.forEach(channel => {
+                const channelCard = document.createElement('div');
+                channelCard.classList.add('channel-card');
+                channelCard.innerHTML = `
+                    <div class="channel-image-container">
+                        <img src="${channel.logoUrl}" alt="${channel.name}">
+                    </div>
+                    <div class="channel-details">
+                        <h3>${channel.name}</h3>
+                        <div class="channel-meta">
+                            <span>${channel.category}</span>
+                            <span>${channel.language}</span>
+                        </div>
+                    </div>
+                `;
+                channelsContainer.appendChild(channelCard);
+            });
+        };
+    
+        const filterChannels = () => {
+            const category = categoryDropdown.value;
+            const language = languageDropdown.value;
+            const searchText = searchInput.value.toLowerCase();
+    
+            filteredChannels = allChannels.filter(channel => {
+                const matchesCategory = category === 'all' || channel.category === category;
+                const matchesLanguage = language === 'all' || channel.language === language;
+                const matchesSearch = channel.name.toLowerCase().includes(searchText);
+    
+                return matchesCategory && matchesLanguage && matchesSearch;
+            });
+    
+            displayChannels();
+        };
+    
+        categoryDropdown.addEventListener('change', filterChannels);
+        languageDropdown.addEventListener('change', filterChannels);
+        searchInput.addEventListener('input', filterChannels);
+    
+        fetchChannels();
+    </script>
+    
+</body>
+</html>
