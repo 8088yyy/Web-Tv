@@ -41,17 +41,15 @@
             flex-wrap: wrap;
             gap: 15px;
         }
-
-        .header h1 {
-            color: var(--text-primary);
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
         .header p {
             font-size: 0.9rem;
             color: var(--text-secondary);
             margin-top: 5px;
+        }
+        .header h1 {
+            color: var(--text-primary);
+            font-size: 2rem;
+            font-weight: 700;
         }
 
         .header-controls {
@@ -288,77 +286,147 @@
     </div>
 
     <script>
-        const apiUrl = './api.json';
-    
-        const categoryDropdown = document.getElementById('category-dropdown');
-        const languageDropdown = document.getElementById('language-dropdown');
-        const searchInput = document.getElementById('search-input');
-        const channelsContainer = document.getElementById('channels');
-    
+        const apiUrl = 'api.json';
         let allChannels = [];
-        let filteredChannels = [];
-    
-        const fetchChannels = async () => {
-            channelsContainer.innerHTML = '<div class="loading-spinner"></div>';
+        let currentFilters = {
+            category: 'all',
+            language: 'all',
+            search: ''
+        };
+
+        // Fetch and initialize channels
+        async function initializeChannels() {
             try {
                 const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const data = await response.json();
                 allChannels = data;
-                filteredChannels = data;
-                displayChannels();
+                applyFilters();
+                setupEventListeners();
             } catch (error) {
-                channelsContainer.innerHTML = '<div class="no-results">Failed to load channels. Please try again later.</div>';
-            }
-        };
-    
-        const displayChannels = () => {
-            channelsContainer.innerHTML = '';
-            if (filteredChannels.length === 0) {
-                channelsContainer.innerHTML = '<div class="no-results">No channels found.</div>';
-                return;
-            }
-    
-            filteredChannels.forEach(channel => {
-                const channelCard = document.createElement('div');
-                channelCard.classList.add('channel-card');
-                channelCard.innerHTML = `
-                    <div class="channel-image-container">
-                        <img src="${channel.logoUrl}" alt="${channel.name}">
-                    </div>
-                    <div class="channel-details">
-                        <h3>${channel.name}</h3>
-                        <div class="channel-meta">
-                            <span>${channel.category}</span>
-                            <span>${channel.language}</span>
-                        </div>
+                console.error('Error fetching channels:', error);
+                document.getElementById('channels').innerHTML = `
+                    <div class="no-results">
+                        Failed to load channels. Please try again later.
                     </div>
                 `;
-                channelsContainer.appendChild(channelCard);
+            }
+        }
+
+        // Setup event listeners for filters
+        function setupEventListeners() {
+            document.getElementById('category-dropdown').addEventListener('change', (e) => {
+                currentFilters.category = e.target.value.toLowerCase();
+                applyFilters();
             });
-        };
-    
-        const filterChannels = () => {
-            const category = categoryDropdown.value;
-            const language = languageDropdown.value;
-            const searchText = searchInput.value.toLowerCase();
-    
-            filteredChannels = allChannels.filter(channel => {
-                const matchesCategory = category === 'all' || channel.category === category;
-                const matchesLanguage = language === 'all' || channel.language === language;
-                const matchesSearch = channel.name.toLowerCase().includes(searchText);
-    
-                return matchesCategory && matchesLanguage && matchesSearch;
+
+            document.getElementById('language-dropdown').addEventListener('change', (e) => {
+                currentFilters.language = e.target.value.toLowerCase();
+                applyFilters();
             });
-    
-            displayChannels();
-        };
-    
-        categoryDropdown.addEventListener('change', filterChannels);
-        languageDropdown.addEventListener('change', filterChannels);
-        searchInput.addEventListener('input', filterChannels);
-    
-        fetchChannels();
+
+            document.getElementById('search-input').addEventListener('input', debounce((e) => {
+                currentFilters.search = e.target.value.toLowerCase();
+                applyFilters();
+            }, 300));
+        }
+
+        // Debounce function for search input
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Apply all filters and render channels
+        function applyFilters() {
+            let filteredChannels = allChannels;
+
+            // Apply category filter
+            if (currentFilters.category !== 'all') {
+                filteredChannels = filteredChannels.filter(channel => 
+                    channel.category.toLowerCase() === currentFilters.category
+                );
+            }
+
+            // Apply language filter
+            if (currentFilters.language !== 'all') {
+                filteredChannels = filteredChannels.filter(channel => 
+                    channel.language.toLowerCase() === currentFilters.language
+                );
+            }
+
+            // Apply search filter
+            if (currentFilters.search) {
+                filteredChannels = filteredChannels.filter(channel => 
+                    channel.name.toLowerCase().includes(currentFilters.search) ||
+                    channel.category.toLowerCase().includes(currentFilters.search) ||
+                    channel.language.toLowerCase().includes(currentFilters.search)
+                );
+            }
+
+            // Find and add similar channels
+            if (filteredChannels.length > 0) {
+                const similarChannels = findSimilarChannels(filteredChannels[0], allChannels);
+                filteredChannels = [...new Set([...filteredChannels, ...similarChannels])];
+            }
+
+            renderChannels(filteredChannels);
+        }
+
+        // Find similar channels based on category and language
+        function findSimilarChannels(channel, allChannels) {
+            if (!channel) return [];
+            
+            return allChannels.filter(c => 
+                c.name !== channel.name && (
+                    c.category.toLowerCase() === channel.category.toLowerCase() ||
+                    c.language.toLowerCase() === channel.language.toLowerCase()
+                )
+            ).slice(0, 5);
+        }
+
+        // Render channels to the DOM
+        function renderChannels(channels) {
+            const channelsContainer = document.getElementById('channels');
+            
+            if (channels.length === 0) {
+                channelsContainer.innerHTML = `
+                    <div class="no-results">
+                        No channels found matching your criteria.
+                        Try adjusting your filters.
+                    </div>
+                `;
+                return;
+            }
+
+            channelsContainer.innerHTML = channels.map(channel => `
+                <div class="channel-card" onclick="window.location.href='play.html?c=${encodeURIComponent(channel.name)}'">
+                    <div class="channel-image-container">
+                        <img src="${channel.logo}" alt="${channel.name}" loading="lazy">
+                    </div>
+                    <div class="channel-details">
+                        <h3 title="${channel.name}">${channel.name}</h3>
+                        <div class="channel-meta">
+                            <span>${channel.language}</span>
+                            <span>•</span>
+                            <span>${channel.category}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize the application
+        initializeChannels();
     </script>
-    
 </body>
 </html>
