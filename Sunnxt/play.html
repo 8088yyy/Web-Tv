@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunnxt</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .video-container {
+            position: center;
+            width: 100%;
+            max-width: 100%;
+            height: 0;
+            padding-top: 47%; 
+            background-color: black;
+            overflow: hidden;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="video-container">
+    <video id="video" controls></video>
+</div>
+
+<script>
+  (() => {
+    const enterFullscreen = (element) => {
+      if (element.requestFullscreen) {
+        element.requestFullscreen();
+      } else if (element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+      } else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+      }
+    };
+
+    const init = async () => {
+      try {
+        const channelName = new URLSearchParams(location.search).get('c');
+        const response = await fetch('./api.json');
+        const channels = await response.json();
+        const channel = channels.find(ch => ch.name === channelName);
+
+        if (Hls.isSupported()) {
+          const video = document.getElementById('video');
+          const hls = new Hls();
+          hls.loadSource(channel.url);  // Dynamically load the URL from the API JSON
+          hls.attachMedia(video);
+
+          // Play the video when HLS is ready
+          hls.on(Hls.Events.MANIFEST_PARSED, function () {
+            video.play();
+          });
+
+          // Enable autoplay and mute for initial playback
+          video.autoplay = true;
+          video.muted = true;
+
+          // Fullscreen functionality when the video is ready
+          hls.on(Hls.Events.MANIFEST_PARSED, () => {
+            enterFullscreen(document.documentElement);  // Enter fullscreen automatically
+          });
+
+          // Handle resize events to adjust the video size
+          window.addEventListener('resize', () => {
+            video.style.width = window.innerWidth + 'px';
+            video.style.height = window.innerHeight + 'px';
+          });
+
+          // Prevent exiting fullscreen
+          document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement) {
+              enterFullscreen(document.documentElement);
+            }
+          });
+        } else {
+          console.error('HLS.js is not supported in this browser');
+        }
+      } catch (error) {
+        console.error('An error occurred:', error);
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', init);
+  })();
+</script>
+
+</body>
+</html>
