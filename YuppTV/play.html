@@ -76,7 +76,7 @@
         const init = async () => {
           try {
             const channelName = new URLSearchParams(location.search).get('c');
-            const response = await fetch('./api.json');
+            const response = await fetch('https://yupp.8088yyy.workers.dev/');
             const channels = await response.json();
             const channel = channels.find(ch => ch.name === channelName);
             const player = jwplayer('playerContainer').setup({
