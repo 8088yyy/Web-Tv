@@ -1,27 +1,9 @@
 [
   {
-    "name": "Puthiya Thalaimurai",
-    "logo": "https://d229kpbsb5jevy.cloudfront.net/tv/150/150/bnw/puthiyathalaimurai-black.png",
-    "url": "https://segment.yuppcdn.net/240122/puthiya/playlist.m3u8",
-    "category": "News"
-  },
-  {
-    "name": "Polimer News",
-    "logo": "https://d229kpbsb5jevy.cloudfront.net/tv/150/150/bnw/polimer-news-black.png",
-    "url": "https://segment.yuppcdn.net/110322/polimernews/playlist.m3u8",
-    "category": "News"
-  },
-  {
-    "name": "News7 Tamil",
-    "logo": "https://d229kpbsb5jevy.cloudfront.net/tv/150/150/bnw/news7tamil-black.png",
-    "url": "https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/news7_nim_https/240122/news7/playlist.m3u8",
-    "category": "News"
-  },
-  {
-    "name": "Thanthi TV",
-    "logo": "https://d229kpbsb5jevy.cloudfront.net/tv/150/150/bnw/thanthi-tv-black.png",
-    "url": "https://segment.yuppcdn.net/110322/thanthi/playlist.m3u8",
-    "category": "News"
+    "name": "Star Vijay UK",
+    "logo": "https://i.ibb.co/5TN6GGq/Vijay-TV-logo.png",
+    "url": "",
+    "category": "Entertainment"
   },
   {
     "name": "Sirippoli TV",
@@ -70,5 +52,29 @@
     "logo": "https://d229kpbsb5jevy.cloudfront.net/tv/150/150/bnw/vasantham-tv-white.png",
     "url": "https://edge2-moblive.yuppcdn.net/trans1sd/smil:vatv07.smil/playlist.m3u8",
     "category": "Entertainment"
+  },
+  {
+    "name": "Puthiya Thalaimurai",
+    "logo": "https://d229kpbsb5jevy.cloudfront.net/tv/150/150/bnw/puthiyathalaimurai-black.png",
+    "url": "https://segment.yuppcdn.net/240122/puthiya/playlist.m3u8",
+    "category": "News"
+  },
+  {
+    "name": "Polimer News",
+    "logo": "https://d229kpbsb5jevy.cloudfront.net/tv/150/150/bnw/polimer-news-black.png",
+    "url": "https://segment.yuppcdn.net/110322/polimernews/playlist.m3u8",
+    "category": "News"
+  },
+  {
+    "name": "News7 Tamil",
+    "logo": "https://d229kpbsb5jevy.cloudfront.net/tv/150/150/bnw/news7tamil-black.png",
+    "url": "https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/news7_nim_https/240122/news7/playlist.m3u8",
+    "category": "News"
+  },
+  {
+    "name": "Thanthi TV",
+    "logo": "https://d229kpbsb5jevy.cloudfront.net/tv/150/150/bnw/thanthi-tv-black.png",
+    "url": "https://segment.yuppcdn.net/110322/thanthi/playlist.m3u8",
+    "category": "News"
   }
 ]
