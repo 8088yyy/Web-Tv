@@ -1,125 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YuppTV</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
-        width: 100vw;
-        height: 100vh;
-        background: #000;
-        font-family: Arial, sans-serif;
-        overflow: hidden;
-      }
-
-      #playerContainer {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 1;
-      }
-
-      .error-message {
-        display: none;
-        color: #fff;
-        text-align: center;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, 0.8);
-        padding: 20px;
-        border-radius: 8px;
-        z-index: 2;
-      }
-
-      .jw-wrapper {
-        position: fixed !important;
-        width: 100vw !important;
-        height: 100vh !important;
-      }
-    </style>
-    <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
-  </head>
-  <body>
-    <div id="playerContainer"></div>
-    <div class="error-message"></div>
-    <script>
-      (() => {
-        const showError = (message) => {
-          const errorEl = document.querySelector('.error-message');
-          document.getElementById('playerContainer').style.display = 'none';
-          errorEl.style.display = 'block';
-          errorEl.innerHTML = `
-					<h1>Error</h1>
-					<p>${message}</p>`;
-        };
-        const enterFullscreen = (element) => {
-          if (element.requestFullscreen) {
-            element.requestFullscreen();
-          } else if (element.webkitRequestFullscreen) {
-            element.webkitRequestFullscreen();
-          } else if (element.msRequestFullscreen) {
-            element.msRequestFullscreen();
-          }
-        };
-        const init = async () => {
-          try {
-            const channelName = new URLSearchParams(location.search).get('c');
-            const response = await fetch('https://yupp.8088yyy.workers.dev/');
-            const channels = await response.json();
-            const channel = channels.find(ch => ch.name === channelName);
-            const player = jwplayer('playerContainer').setup({
+<head>
+  <meta charset="UTF-8">
+  <title>YuppTV</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #000000;
+      overflow: hidden;
+    }
+    
+    .jwplayer {
+      position: absolute!important;
+    }
+    
+    .jwplayer.jw-flag-aspect-mode {
+      min-height: 100%;
+      max-height: 100%;
+    }
+    
+    #message {
+      color: #fff;
+      align-items: center;
+      z-index: 1001;
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="jwplayerDiv"></div>
+  <div id="player" style="display: none;"></div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get channel name from URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const channelName = urlParams.get('c');
+      
+      // Fetch the JSON data from the new API
+      fetch('https://yupp.8088yyy.workers.dev/')
+        .then(response => response.json())
+        .then(data => {
+          // Find the channel with the corresponding name
+          const channel = data.find(c => c.name === decodeURIComponent(channelName));
+          
+          if (channel) {
+            // Setup player with the channel URL
+            const player = jwplayer("jwplayerDiv").setup({
               file: channel.url,
-              autostart: true,
-              stretching: "exactfit",
               width: "100%",
               height: "100%",
-              type: "hls",
+              autostart: true,
+              mute: false,
               primary: "html5",
-              displaytitle: false,
-              displaydescription: false,
-              controls: true,
-              fullscreen: true,
+              hlshtml: true,
               aspectratio: "16:9",
-              stretching: "uniform"
+              stretching: "uniform",
+              playbackRateControls: true,
+              controls: true
             });
-            player.on('error', () => showError('An error occurred'));
-            player.on('ready', () => {
-              document.querySelector('.error-message').style.display = 'none';
-              enterFullscreen(document.documentElement);
+            
+            // Ensure unmuted autoplay
+            player.on('ready', function() {
+              player.setMute(false);
+              player.setVolume(100);
             });
-            player.on('fullscreen', (event) => {
-              if (!event.fullscreen) {
-                enterFullscreen(document.documentElement);
-              }
+            
+            // Handle autoplay with sound
+            player.on('play', function() {
+              player.setMute(false);
+              player.setVolume(100);
             });
-            // Handle resize events
-            window.addEventListener('resize', () => {
-              player.resize(window.innerWidth, window.innerHeight);
-            });
-            // Prevent exiting fullscreen
-            document.addEventListener('fullscreenchange', () => {
-              if (!document.fullscreenElement) {
-                enterFullscreen(document.documentElement);
-              }
-            });
-          } catch (error) {
-            showError('An error occurred');
+          } else {
+            // Display error if channel is not found
+            document.body.innerHTML += '<div id="message">Channel not found</div>';
           }
-        };
-        document.addEventListener('DOMContentLoaded', init);
-      })();
-    </script>
-  </body>
+        })
+        .catch(error => {
+          // Display error if there's an issue fetching the data
+          document.body.innerHTML += '<div id="message">Error loading channel data</div>';
+          console.error('Error:', error);
+        });
+    });
+  </script>
+</body>
 </html>
