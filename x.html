@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>XPlayer</title>
+  <title>Xplayer</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #000000;
       overflow: hidden;
     }
     
@@ -33,7 +33,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,.8);
+      background-color: rgba(0, 0, 0, 0.8);
       justify-content: center;
       font-size: 24px;
     }
@@ -46,19 +46,35 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-
+      // Get URL parameter
       const urlParams = new URLSearchParams(window.location.search);
       const videoUrl = urlParams.get('url');
       
-      jwplayer("jwplayerDiv").setup({
+      // Setup player with the URL from parameter
+      const player = jwplayer("jwplayerDiv").setup({
         file: videoUrl,
         width: "100%",
         height: "100%",
         autostart: true,
+        mute: false,
         primary: "html5",
         hlshtml: true,
         aspectratio: "16:9",
-        stretching: "uniform"
+        stretching: "uniform",
+        playbackRateControls: true,
+        controls: true
+      });
+
+      // Ensure unmuted autoplay
+      player.on('ready', function() {
+        player.setMute(false);
+        player.setVolume(100);
+      });
+
+      // Handle autoplay with sound
+      player.on('play', function() {
+        player.setMute(false);
+        player.setVolume(100);
       });
     });
   </script>
