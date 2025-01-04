@@ -13,23 +13,17 @@
   },
     {
     "name": "Star Sports 1 HD",
-    "logo": "https://i.postimg.cc/QM22x0Qj/Star-Sports-1-HD.png",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Star_Sports_1_HD.png/360px-Star_Sports_1_HD.png",
     "url": "https://deencooper.space/ex/stream.php?id=1&e=.m3u8",
     "category": "Sports"
   },
     {
     "name": "Star Sports 1 Hindi HD",
-    "logo": "https://i.postimg.cc/MZbCq0v8/Star-Sports-1-HD-Hindi.png",
+    "logo": "https://imagesdishtvd2h.whatsonindia.com/dasimages/channel/landscape/360x270/XAplQfzW.png&w=256&q=75",
     "url": "https://deencooper.space/ex/stream.php?id=2&e=.m3u8",
     "category": "Sports"
   },
-      {
-    "name": "Star Sports 1 Hindi HD bkup",
-    "logo": "https://i.postimg.cc/MZbCq0v8/Star-Sports-1-HD-Hindi.png",
-    "url": "http://baskardo.vip/In_Hin/index.m3u8",
-    "category": "Sports"
-  },
-      {
+    {
     "name": "Star Movies HD",
     "logo": "https://i.postimg.cc/MZbCq0v8/Star-Sports-1-HD-Hindi.png",
     "url": "https://baskardo.vip/IN_STRM/index.m3u8",
