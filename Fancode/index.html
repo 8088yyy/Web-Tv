@@ -29,7 +29,7 @@
         }
 
         .container {
-            max-width: 1400px; /* Increased max-width */
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -39,6 +39,33 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 30px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .back-button {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color var(--transition-speed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-button:hover {
+            background-color: var(--bg-medium);
+        }
+
+        .back-arrow {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
         }
 
         .header h1 {
@@ -63,8 +90,8 @@
 
         .matches-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Increased grid item width */
-            gap: 25px; /* Slightly increased gap */
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
         }
 
         .match-card {
@@ -86,7 +113,7 @@
         .match-image-container {
             position: relative;
             width: 100%;
-            height: 250px; /* Increased image height */
+            height: 250px;
         }
 
         .match-card img {
@@ -117,7 +144,7 @@
         }
 
         .match-details h3 {
-            font-size: 1.1rem; /* Slightly larger font */
+            font-size: 1.1rem;
             margin-bottom: 5px;
             color: var(--text-primary);
         }
@@ -164,7 +191,14 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Fancode Live Matches</h1>
+            <div class="header-left">
+                <a href="../index.html" class="back-button">
+                    <svg class="back-arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                    </svg>
+                </a>
+                <h1>Fancode Live Matches</h1>
+            </div>
             <a href="https://t.me/The8088yyy" class="telegram-btn">Join Telegram</a>
         </div>
         <div id="matches" class="matches-grid"></div>
