@@ -11,4 +11,16 @@
     "url": "https://baskardo.vip/IND_VijaySuper/index.m3u8?token=2bc6ae95fb229170e6cb165ae00f9278",
     "category": "Movies"
   }
+    {
+    "name": "Star Sports 1 HD",
+    "logo": "https://i.postimg.cc/QM22x0Qj/Star-Sports-1-HD.png",
+    "url": "https://deencooper.space/ex/stream.php?id=1&e=.m3u8",
+    "category": "Sports"
+  },
+    {
+    "name": "Star Sports 1 Hindi HD",
+    "logo": "https://i.postimg.cc/MZbCq0v8/Star-Sports-1-HD-Hindi.png",
+    "url": "https://deencooper.space/ex/stream.php?id=2&e=.m3u8",
+    "category": "Sports"
+  },
 ]
