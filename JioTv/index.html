@@ -40,6 +40,7 @@
             margin-bottom: 30px;
             flex-wrap: wrap;
             gap: 15px;
+            position: relative;
         }
 
         .header-left {
@@ -69,11 +70,19 @@
             fill: currentColor;
         }
 
-        .header p {
+        .header-notice {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
             font-size: 0.9rem;
             color: var(--text-secondary);
-            margin-top: 5px;
+            margin-top: 10px;
+            text-align: center;
+            width: 100%;
+            padding: 0 15px;
         }
+
         .header h1 {
             color: var(--text-primary);
             font-size: 2rem;
@@ -150,6 +159,7 @@
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
             padding: 10px;
+            margin-top: 30px;
         }
 
         .channel-card {
@@ -223,10 +233,19 @@
             .header {
                 flex-direction: column;
                 align-items: stretch;
+                margin-bottom: 45px;
             }
 
             .header-controls {
                 flex-direction: column;
+            }
+
+            .header-notice {
+                position: relative;
+                transform: none;
+                left: 0;
+                margin-top: 15px;
+                padding: 0;
             }
 
             .category-select,
@@ -245,21 +264,6 @@
                 height: 120px;
             }
         }
-
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid var(--bg-medium);
-            border-top: 3px solid var(--accent-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
 <body>
@@ -271,9 +275,8 @@
                         <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
                     </svg>
                 </a>
-            <h1>JioTv</h1>
+                <h1>JioTv</h1>
             </div>
-            <p>Disable ad blocker to make stream work.</p>
             <div class="header-controls">
                 <select id="category-dropdown" class="category-select">
                     <option value="all">All Categories</option>
@@ -314,10 +317,9 @@
                     Join Telegram
                 </a>
             </div>
+            <div class="header-notice">Disable ad blocker to make stream work.</div>
         </div>
-        <div id="channels" class="channels-grid">
-            <div class="loading-spinner"></div>
-        </div>
+        <div id="channels" class="channels-grid"></div>
     </div>
 
     <script>
@@ -329,15 +331,13 @@
             search: ''
         };
 
-        // Fetch and initialize channels
         async function initializeChannels() {
             try {
                 const response = await fetch(apiUrl);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                const data = await response.json();
-                allChannels = data;
+                allChannels = await response.json();
                 applyFilters();
                 setupEventListeners();
             } catch (error) {
@@ -350,7 +350,6 @@
             }
         }
 
-        // Setup event listeners for filters
         function setupEventListeners() {
             document.getElementById('category-dropdown').addEventListener('change', (e) => {
                 currentFilters.category = e.target.value.toLowerCase();
@@ -368,7 +367,6 @@
             }, 300));
         }
 
-        // Debounce function for search input
         function debounce(func, wait) {
             let timeout;
             return function executedFunction(...args) {
@@ -381,25 +379,21 @@
             };
         }
 
-        // Apply all filters and render channels
         function applyFilters() {
-            let filteredChannels = allChannels;
+            let filteredChannels = [...allChannels];
 
-            // Apply category filter
             if (currentFilters.category !== 'all') {
                 filteredChannels = filteredChannels.filter(channel => 
                     channel.category.toLowerCase() === currentFilters.category
                 );
             }
 
-            // Apply language filter
             if (currentFilters.language !== 'all') {
                 filteredChannels = filteredChannels.filter(channel => 
                     channel.language.toLowerCase() === currentFilters.language
                 );
             }
 
-            // Apply search filter
             if (currentFilters.search) {
                 filteredChannels = filteredChannels.filter(channel => 
                     channel.name.toLowerCase().includes(currentFilters.search) ||
@@ -408,28 +402,9 @@
                 );
             }
 
-            // Find and add similar channels
-            if (filteredChannels.length > 0) {
-                const similarChannels = findSimilarChannels(filteredChannels[0], allChannels);
-                filteredChannels = [...new Set([...filteredChannels, ...similarChannels])];
-            }
-
             renderChannels(filteredChannels);
         }
 
-        // Find similar channels based on category and language
-        function findSimilarChannels(channel, allChannels) {
-            if (!channel) return [];
-            
-            return allChannels.filter(c => 
-                c.name !== channel.name && (
-                    c.category.toLowerCase() === channel.category.toLowerCase() ||
-                    c.language.toLowerCase() === channel.language.toLowerCase()
-                )
-            ).slice(0, 5);
-        }
-
-        // Render channels to the DOM
         function renderChannels(channels) {
             const channelsContainer = document.getElementById('channels');
             
@@ -460,7 +435,6 @@
             `).join('');
         }
 
-        // Initialize the application
         initializeChannels();
     </script>
 </body>
