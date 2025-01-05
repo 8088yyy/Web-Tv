@@ -40,6 +40,7 @@
             margin-bottom: 30px;
             flex-wrap: wrap;
             gap: 15px;
+            position: relative;
         }
 
         .header-left {
@@ -75,11 +76,18 @@
             font-weight: 700;
         }
 
-        .header p {
-                font-size: 0.9rem;
-                color: var(--text-secondary);
-                margin-top: 5px;
-            }
+        .header-notice {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 10px;
+            text-align: center;
+            width: 100%;
+            padding: 0 15px;
+        }
 
         .header-controls {
             display: flex;
@@ -122,6 +130,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             gap: 15px;
+            margin-top: 30px;
         }
 
         .channel-card {
@@ -174,10 +183,19 @@
             .header {
                 flex-direction: column;
                 align-items: stretch;
+                margin-bottom: 45px;
             }
 
             .header-controls {
                 flex-direction: column;
+            }
+
+            .header-notice {
+                position: relative;
+                transform: none;
+                left: 0;
+                margin-top: 15px;
+                padding: 0;
             }
 
             .category-select, .search-input {
@@ -209,7 +227,6 @@
                 </a>
                 <h1>Star Network</h1>
             </div>
-            <p>stream doesn't work in 10 sec, try reload</p>
             <div class="header-controls">
                 <select id="category-dropdown" class="category-select">
                     <option value="all">All Categories</option>
@@ -219,13 +236,14 @@
                 <input type="text" id="search-input" class="search-input" placeholder="Search channels...">
                 <a href="https://t.me/The8088yyy" class="telegram-btn">Join Telegram</a>
             </div>
+            <div class="header-notice">stream doesn't work in 10 sec, try reload</div>
         </div>
         <div id="channels" class="channels-grid"></div>
     </div>
 
     <script>
-        const apiUrl = 'api.json'; // Path to the JSON file
-        let allChannels = []; // Store all channels to allow filtering
+        const apiUrl = 'api.json';
+        let allChannels = [];
 
         fetch(apiUrl)
             .then(response => {
@@ -238,22 +256,17 @@
                 allChannels = data;
                 renderChannels(data);
 
-                // Category dropdown filter
                 const categoryDropdown = document.getElementById('category-dropdown');
                 categoryDropdown.addEventListener('change', (e) => {
                     const category = e.target.value.toLowerCase();
-                    
-                    // Filter channels
                     const filteredChannels = category === 'all' 
                         ? allChannels 
                         : allChannels.filter(channel => 
                             channel.category.toLowerCase() === category
                         );
-                    
                     renderChannels(filteredChannels);
                 });
 
-                // Search functionality
                 const searchInput = document.getElementById('search-input');
                 searchInput.addEventListener('input', (e) => {
                     const searchTerm = e.target.value.toLowerCase();
@@ -269,7 +282,7 @@
 
         function renderChannels(channels) {
             const channelsContainer = document.getElementById('channels');
-            channelsContainer.innerHTML = ''; // Clear existing channels
+            channelsContainer.innerHTML = '';
 
             channels.forEach(channel => {
                 const channelCard = document.createElement('div');
