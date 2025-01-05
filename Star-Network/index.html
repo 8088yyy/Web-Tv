@@ -10,6 +10,7 @@
             --bg-medium: #1E1E1E;
             --text-primary: #FFFFFF;
             --text-secondary: #B0B0B0;
+            --accent-color: #0088cc;
             --transition-speed: 0.3s;
         }
 
@@ -73,6 +74,12 @@
             font-size: 2rem;
             font-weight: 700;
         }
+
+        .header p {
+                font-size: 0.9rem;
+                color: var(--text-secondary);
+                margin-top: 5px;
+            }
 
         .header-controls {
             display: flex;
@@ -202,6 +209,7 @@
                 </a>
                 <h1>Star Network</h1>
             </div>
+            <p>stream doesn't work in 10 sec, try reload</p>
             <div class="header-controls">
                 <select id="category-dropdown" class="category-select">
                     <option value="all">All Categories</option>
