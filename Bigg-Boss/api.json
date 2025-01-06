@@ -7,12 +7,12 @@
       {
         "name": " Bigg Boss Hindi",
         "logo": "https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/16x9-1728316195515.jpg",
-        "url": "https://prod-ent-live-cf.jiocinema.com/hls/live/2101885/uhd_akamai_atv_avc_24x7_bbhindi_s18_day03/master.m3u8"
+        "url": "https://prod-ent-live-gm.jiocinema.com/hls/live/2105436/hd_akamai_iosmob_avc_24x7_bbhindi_s18_day04/master.m3u8"
       },
       {
       "name": " Bigg Boss Kannada",
       "logo": "https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/16x9-1731300262617.jpg",
-      "url": "https://prod-ent-live-cf.jiocinema.com/hls/live/2106328/hd_akamai_iosmob_avc_eptv_bbkannada_day97/master.m3u8"
+      "url": "https://prod-ent-live-cf.jiocinema.com/hls/live/2106328/hd_akamai_iosmob_avc_eptv_bbkannada_day99/master.m3u8"
       }
     ]
   
