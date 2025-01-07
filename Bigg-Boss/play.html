@@ -49,8 +49,8 @@
       const urlParams = new URLSearchParams(window.location.search);
       const channelName = urlParams.get('c');
       
-      // Fetch the JSON data from the new API
-      fetch('https://yupp.8088yyy.workers.dev/')
+      // Fetch the local JSON data
+      fetch('api.json')
         .then(response => response.json())
         .then(data => {
           // Find the channel with the corresponding name
