@@ -19,7 +19,7 @@
         <video autoplay muted data-shaka-player id="video" style="width:100%;height:100%;"></video>
     </div>
     <script>
-        const manifestUri = "https://linearjitp-playback.astro.com.my/dash-wv/linear/2707/default_ott.mpd";
+        const manifestUri = "http://d37lxn4ksn51zz.cloudfront.net/thang.mpd";
         
         async function init() {
             const video = document.getElementById('video');
@@ -51,7 +51,7 @@
             player.configure({
                 drm: {
                     "clearKeys": {
-                       "af35608a7d4b13d1158c2ef6d6c1a010": "d01c81050dfab309c6be7e60d03c2d82"
+                       "918adebe10a9848d567dc6cb5adce510": "084e76561bba9d4f3ae953acdd37b3ed"
                     },
                 },
                 abr: {
