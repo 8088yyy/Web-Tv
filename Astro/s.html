@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <meta content="noindex, nofollow, noarchive" name="robots"/>
+    <meta name="referrer" content="no-referrer" />
+    <script src="https://cdn.jwplayer.com/libraries/MAaRkUjT.js"></script>
+    <style>
+        /* Fullscreen player container */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+        }
+        #player-container {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="player" class="ViostreamIframe"></div>
+
+    <script>
+        function getParameterByName(name) {
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(window.location.href);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        var ConfiguracionCanales = {
+            
+            "1": {
+                url: "https://proxy.8088yyy.workers.dev/19ee29194c4d4fc286c3e697362e60cd/SunTVHDB_IN_index.mpd",
+                k1: "3891557f1cb14dedb7545bf52499d748",
+                k2: "fb662f742e5f5e0c61a7c1c66d2b019a"
+            }
+        };
+
+var id = getParameterByName('id');
+        var config = ConfiguracionCanales[id];
+
+        if (config) {
+            var sources = [];
+
+            if (config.url.includes('.m3u8')) {
+                sources.push({
+                    file: config.url
+                });
+            }
+
+            if (config.url.includes('.mpd') && config.k1 && config.k2) {
+                sources.push({
+                    file: config.url,
+                    drm: {
+                        clearkey: {
+                            keyId: config.k1,
+                            key: config.k2
+                        }
+                    }
+                });
+            }
+
+            jwplayer("player").setup({
+                playlist: [{
+                    sources: sources
+                }],
+                width: "100%",
+                height: "100%",
+                aspectratio: "16:9", // Maintains aspect ratio
+                autostart: true,
+                primary: "html5",
+                stretching: "exactfit", // Ensures player fills container
+                streaming: {
+                    abr: {
+                        enabled: true // Adaptive bitrate streaming enabled
+                    }
+                }
+            });
+
+            // Optional: Error handling
+            jwplayer().on('error', function(error) {
+                console.error("Player Error:", error);
+            });
+        } else {
+            console.error("Invalid or missing channel ID");
+        }
+    </script>
+</body>
+</html>
