@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sunnxt</title>
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --bg-medium: #1E1E1E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B0B0;
+            --accent-color: #0088cc;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+            position: relative;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .back-button {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.5rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color var(--transition-speed);
+            display: flex;
+            align-items: center;
+        }
+
+        .back-button:hover {
+            background-color: var(--bg-medium);
+        }
+
+        .back-arrow {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .header h1 {
+            color: var(--text-primary);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .header-notice {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 10px;
+            text-align: center;
+            width: 100%;
+            padding: 0 15px;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .telegram-btn {
+            background-color: #0088cc;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color var(--transition-speed);
+        }
+
+        .telegram-btn:hover {
+            background-color: #006699;
+        }
+
+        .category-select, .search-input {
+            background-color: var(--bg-medium);
+            color: var(--text-primary);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            appearance: none;
+        }
+
+        .category-select {
+            width: 150px;
+        }
+
+        .search-input {
+            width: 200px;
+        }
+
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .channel-card {
+            background-color: var(--bg-medium);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .channel-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .channel-image-container {
+            position: relative;
+            width: 100%;
+            height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1E1E1E;
+        }
+
+        .channel-card img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .channel-details {
+            padding: 10px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .channel-details h3 {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: stretch;
+                margin-bottom: 45px;
+            }
+
+            .header-controls {
+                flex-direction: column;
+            }
+
+            .header-notice {
+                position: relative;
+                transform: none;
+                left: 0;
+                margin-top: 15px;
+                padding: 0;
+            }
+
+            .category-select, .search-input {
+                width: 100%;
+            }
+
+            .channels-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            }
+
+            .channel-image-container {
+                height: 100px;
+            }
+
+            .channel-details h3 {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <a href="../index.html" class="back-button">
+                    <svg class="back-arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                    </svg>
+                </a>
+                <h1>Sunnxt</h1>
+            </div>
+            <div class="header-controls">
+                <select id="category-dropdown" class="category-select">
+                    <option value="all">All Categories</option>
+                    <option value="entertainment">Entertainment</option>    
+                    <option value="movies">Movies</option>    
+                    <option value="kids">Kids</option> 
+                    <option value="news">News</option> 
+                </select>
+                <input type="text" id="search-input" class="search-input" placeholder="Search channels...">
+                <a href="https://t.me/The8088yyy" class="telegram-btn">Join Telegram</a>
+            </div>
+
+        </div>
+        <div id="channels" class="channels-grid"></div>
+    </div>
+
+    <script>
+        const apiUrl = 'api.json';
+        let allChannels = [];
+
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                allChannels = data;
+                renderChannels(data);
+
+                const categoryDropdown = document.getElementById('category-dropdown');
+                categoryDropdown.addEventListener('change', (e) => {
+                    const category = e.target.value.toLowerCase();
+                    const filteredChannels = category === 'all' 
+                        ? allChannels 
+                        : allChannels.filter(channel => 
+                            channel.category.toLowerCase() === category
+                        );
+                    renderChannels(filteredChannels);
+                });
+
+                const searchInput = document.getElementById('search-input');
+                searchInput.addEventListener('input', (e) => {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const filteredChannels = allChannels.filter(channel => 
+                        channel.name.toLowerCase().includes(searchTerm)
+                    );
+                    renderChannels(filteredChannels);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+
+        function renderChannels(channels) {
+            const channelsContainer = document.getElementById('channels');
+            channelsContainer.innerHTML = '';
+
+            channels.forEach(channel => {
+                const channelCard = document.createElement('div');
+                channelCard.className = 'channel-card';
+
+                channelCard.innerHTML = `
+                    <div class="channel-image-container">
+                        <img src="${channel.logo}" alt="${channel.name}">
+                    </div>
+                    <div class="channel-details">
+                        <h3>${channel.name}</h3>
+                    </div>
+                `;
+
+                channelCard.addEventListener('click', () => {
+                    window.location.href = `play.html?id=${encodeURIComponent(channel.id)}`;
+                });
+
+                channelsContainer.appendChild(channelCard);
+            });
+        }
+    </script>
+</body>
+</html>

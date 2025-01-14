@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <meta content="noindex, nofollow, noarchive" name="robots"/>
+    <meta name="referrer" content="no-referrer" />
+    <script src="https://cdn.jwplayer.com/libraries/MAaRkUjT.js"></script>
+    <style>
+    body {
+      margin: 0;
+      background-color: #000000;
+      overflow: hidden;
+    }
+    
+    .jwplayer {
+      position: absolute!important;
+    }
+    
+    .jwplayer.jw-flag-aspect-mode {
+      min-height: 100%;
+      max-height: 100%;
+    }
+    </style>
+</head>
+<body>
+    <div id="player" class="ViostreamIframe"></div>
+
+    <script>
+        function getParameterByName(name) {
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(window.location.href);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        var ConfiguracionCanales = 
+        {
+ "KTV_HD": {
+     url: "https://ktv.8088yyy.workers.dev/61477b4c8d8d45d5a49e044cc1dffc60/KTVHDB_IN_index.mpd",
+     k1: "351e547391bb45cbac66d2cb9ec0c294",
+     k2: "3bd646753f4903eee3b404646c7819d3"
+ },
+ "SUN_HD_DOLBY": {
+     url: "https://stvh.8088yyy.workers.dev/19ee29194c4d4fc286c3e697362e60cd/SunTVHDB_IN_index.mpd",
+     k1: "3891557f1cb14dedb7545bf52499d748",
+     k2: "fb662f742e5f5e0c61a7c1c66d2b019a"
+ },
+ "SUN_NEWS": {
+     url: "https://snews.8088yyy.workers.dev/491c99fb6d0c49e88e6349170d890a2f/SunNewsB_IN_index.mpd",
+     k1: "4df8f920386e4346ba6b7d7ae935d668",
+     k2: "c5fcaa8df5663365d938a50987f71b84"
+ },
+ "SUN_MUSIC_HD": {
+     url: "https://smusic.8088yyy.workers.dev/d434796d90fa4dc9b7ecfacedbe683f1/SunMusicHDB_IN_index.mpd",
+     k1: "b5a2c6d13b9748de9ceebc0a8adc8af3",
+     k2: "e806fec1bf1c8a844216118c94bad020"
+ },
+ "SUN_LIFE": {
+     url: "https://slife.8088yyy.workers.dev/6b79451f54284b3fb680fd717ee008dc/SunLifeB_IN_index.mpd",
+     k1: "81546df3f41c4a6dbc9a4efc7f2fb626",
+     k2: "3928505f4054cf1fa935276fdbe40992"
+ },
+ "ADITHYA_TV": {
+     url: "https://adi.8088yyy.workers.dev/4d0eb3cde30247ada4ade679fdfbaf86/AdithyaTVB_IN_index.mpd",
+     k1: "d674a1a7f43641a29bd8867d87c7259a",
+     k2: "812f55dcde68619fc6ad95951b241d2c"
+ },
+ "CHUTTI_TV": {
+     url: "https://chtv.8088yyy.workers.dev/3ed29d5b01b546eaa05d184cd87535f1/ChuttiTVB_IN_index.mpd",
+     k1: "05da38a46fb7403088f41434e44de980",
+     k2: "488046139a1e1d65323cfe4bb1b30b7b"
+ }
+ };
+
+var id = getParameterByName('id');
+        var config = ConfiguracionCanales[id];
+
+        if (config) {
+            var sources = [];
+
+            if (config.url.includes('.m3u8')) {
+                sources.push({
+                    file: config.url
+                });
+            }
+
+            if (config.url.includes('.mpd') && config.k1 && config.k2) {
+                sources.push({
+                    file: config.url,
+                    drm: {
+                        clearkey: {
+                            keyId: config.k1,
+                            key: config.k2
+                        }
+                    }
+                });
+            }
+            jwplayer("player").setup({
+                playlist: [{
+                    sources: sources
+                }],
+                width: "100%",
+              height: "100%",
+              autostart: true,
+              mute: false,
+              primary: "html5",
+              hlshtml: true,
+              aspectratio: "16:9",
+              stretching: "uniform",
+              playbackRateControls: true,
+              controls: true,// Ensures player fills container
+                streaming: {
+                    abr: {
+                        enabled: true // Adaptive bitrate streaming enabled
+                    }
+                }
+            });
+
+            // Optional: Error handling
+            jwplayer().on('error', function(error) {
+                console.error("Player Error:", error);
+            });
+        } else {
+            console.error("Invalid or missing channel ID");
+        }
+    </script>
+</body>
+</html>
