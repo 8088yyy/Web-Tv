@@ -1,44 +1,53 @@
 [
     {
         "name": "Sun TV HD",
-        "id": "SUN_HD_DOLBY",
+        "id": "SUN_HD",
         "category": "Entertainment",
+        "url": "https://5.deencooper.space/7/live.php?id=896&key=JITENDRAUNATTI&e.m3u8",
         "logo": "https://tatalogo.pages.dev/521.png"
+        
     },
     {
         "name": "KTV HD",
         "id": "KTV_HD",
         "category": "Movies",
+        "url": "https://5.deencooper.space/7/live.php?id=894&key=JITENDRAUNATTI&e.m3u8",
         "logo": "https://tatalogo.pages.dev/380.png"
+
     },
     {
         "name": "Sun Music HD",
         "id": "SUN_MUSIC_HD",
         "category": "Music",
+        "url": "https://5.deencooper.space/7/live.php?id=895&key=JITENDRAUNATTI&e.m3u8",
         "logo": "https://mediaready.videoready.tv/tatasky-epg/image/fetch/f_auto,fl_lossy,q_auto,h_250,w_250/https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11957-j9lu8sc8-v1/imageContent-11957-j9lu8sc8-m1.png"
     },
     {
         "name": "Sun Life",
         "id": "SUN_LIFE",
         "category": "Entertainment",
+        "url": "https://5.deencooper.space/7/live.php?id=682&key=JITENDRAUNATTI&e.m3u8",
         "logo": "https://tatalogo.pages.dev/474.png"
     },
     {
         "name": "Sun News",
         "id": "SUN_NEWS",
         "category": "News",
+        "url": "https://5.deencooper.space/7/live.php?id=676&key=JITENDRAUNATTI&e.m3u8",
         "logo": "https://i.postimg.cc/k5KdQRFN/image-Content-11734-j9kw60rc-m1.webp"
     },
     {
         "name": "Adithya TV",
         "id": "ADITHYA_TV",
         "category": "Entertainment",
+        "url": "https://5.deencooper.space/7/live.php?id=709&key=JITENDRAUNATTI&e.m3u8",
         "logo": "https://i.ibb.co/DDCQRL2/Adithya.png"
     },
     {
         "name": "Chutti TV",
         "id": "CHUTTI_TV",
         "category": "Kids",
+        "url": "https://5.deencooper.space/7/live.php?id=557&key=JITENDRAUNATTI&e.m3u8",
         "logo": "https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11278-j9j4h4s0-v1/imageContent-11278-j9j4h4s0-m1.png"
     }
 ]
