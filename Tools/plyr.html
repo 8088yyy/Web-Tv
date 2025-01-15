@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLS Player</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.css">
+    
+    <style>
+        :root {
+            --plyr-color-main: #ff8c00;
+            --plyr-range-fill-background: #ff8c00;
+            --plyr-video-controls-background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .video-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #player {
+            width: 100%;
+            height: 100%;
+            max-height: 100vh;
+            max-width: 100vw;
+            object-fit: contain;
+        }
+
+        .plyr--video {
+            height: 100%;
+        }
+
+        .plyr__control--overlaid {
+            background: rgba(255, 140, 0, 0.8);
+        }
+
+        .plyr--full-ui input[type=range] {
+            color: #ff8c00;
+        }
+
+        .plyr__control:hover {
+            background: rgba(255, 140, 0, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video id="player" playsinline>
+            <source type="application/x-mpegURL">
+        </video>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.4.10/hls.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.querySelector('#player');
+            
+            const url = new URLSearchParams(window.location.search).get('url');
+            if (!url) {
+                alert('Please provide a video URL using ?url=YOUR_VIDEO_URL');
+                return;
+            }
+
+            // Initialize Plyr with autoplay enabled and muted disabled
+            const player = new Plyr(video, {
+                controls: [
+                    'play-large',
+                    'play',
+                    'progress',
+                    'current-time',
+                    'mute',
+                    'volume',
+                    'fullscreen'
+                ],
+                fullscreen: {
+                    enabled: true,
+                    fallback: true,
+                    iosNative: true
+                },
+                ratio: '16:9',
+                keyboard: { focused: true, global: true },
+                muted: false, // Ensure video starts unmuted
+                volume: 1     // Set volume to maximum
+            });
+
+            // Function to attempt autoplay with sound
+            const attemptAutoplay = async () => {
+                try {
+                    await video.play();
+                    console.log('Autoplay with sound successful');
+                } catch (error) {
+                    console.log('Autoplay with sound failed:', error);
+                    // If autoplay with sound fails, try muted autoplay as fallback
+                    video.muted = true;
+                    try {
+                        await video.play();
+                        console.log('Muted autoplay successful');
+                        // Add a button to unmute
+                        const unmuteBtn = document.createElement('button');
+                        unmuteBtn.innerHTML = 'Click to Unmute';
+                        unmuteBtn.style.cssText = 'position:absolute;top:20px;left:20px;z-index:1000;padding:10px;background:#ff8c00;color:white;border:none;border-radius:5px;cursor:pointer;';
+                        document.querySelector('.video-container').appendChild(unmuteBtn);
+                        unmuteBtn.onclick = () => {
+                            video.muted = false;
+                            unmuteBtn.remove();
+                        };
+                    } catch (error) {
+                        console.log('All autoplay attempts failed:', error);
+                    }
+                }
+            };
+
+            // Setup HLS with autoplay
+            if (Hls.isSupported()) {
+                const hls = new Hls({
+                    debug: false,
+                    enableWorker: true,
+                    lowLatencyMode: true,
+                    backBufferLength: 90
+                });
+
+                hls.loadSource(url);
+                hls.attachMedia(video);
+
+                hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                    attemptAutoplay();
+                });
+
+                hls.on(Hls.Events.ERROR, (event, data) => {
+                    if (data.fatal) {
+                        switch(data.type) {
+                            case Hls.ErrorTypes.NETWORK_ERROR:
+                                console.log('Network error, attempting to recover...');
+                                hls.startLoad();
+                                break;
+                            case Hls.ErrorTypes.MEDIA_ERROR:
+                                console.log('Media error, attempting to recover...');
+                                hls.recoverMediaError();
+                                break;
+                            default:
+                                console.error('Fatal error, destroying player:', data);
+                                hls.destroy();
+                                break;
+                        }
+                    }
+                });
+            } 
+            // Fallback for Safari
+            else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = url;
+                attemptAutoplay();
+            }
+
+            // Add keyboard shortcuts
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'f' || e.key === 'F') {
+                    player.fullscreen.enter();
+                }
+            });
+
+            // Add user interaction detection
+            document.addEventListener('click', () => {
+                if (video.muted) {
+                    video.muted = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
